@@ -13,12 +13,12 @@ def call(Map config = [:]) {
         securityScan()
     }
 
-    // stage('Docker Build') {
-    //     buildAndPushImage(
-    //         imageName: imageName,
-    //         imageTag: env.GIT_COMMIT
-    //     )
-    // }
+    stage('Docker Build') {
+        buildAndPushImage(
+            imageName: imageName,
+            imageTag: env.GIT_COMMIT
+        )
+    }
 
     stage('Helm Validation') {
         deployWithHelm(
