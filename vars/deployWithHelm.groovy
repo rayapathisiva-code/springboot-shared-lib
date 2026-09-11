@@ -1,8 +1,8 @@
 def call(Map config = [:]) {
-    def chart = config.get('chart', 'helm/application')
-    def releaseName = config.get('releaseName', env.IMAGE_NAME ?: 'springboot-demo')
+    def chart = config.get('chart', 'helm/springboot-poc')
+    def releaseName = config.get('releaseName', env.IMAGE_NAME ?: 'springboot-poc')
     def namespace = config.get('namespace', env.ENVIRONMENT ?: 'development')
-    def imageName = config.get('imageName', env.IMAGE_NAME ?: 'springboot-demo')
+    def imageName = config.get('imageName', env.IMAGE_NAME ?: 'springboot-poc')
     def imageTag = config.get('imageTag', env.IMAGE_TAG ?: env.GIT_COMMIT)
     def validationOnly = config.get('validationOnly', false)
 
